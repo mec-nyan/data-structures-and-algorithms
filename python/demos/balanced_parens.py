@@ -4,29 +4,26 @@
 from data_structures import Stack
 
 
-def is_balanced(s: str) -> bool:
+def is_balanced(expr: str) -> bool:
     '''Check if parenthesis are balanced.'''
 
-    stk = Stack()
-    balanced = True
+    s = Stack()
 
-    i = 0
-    while i < len(s) and balanced:
-        if s[i] == "(":
-            stk.push(s[i])
-        elif s[i] == ")":
-            if not stk.is_empty():
-                stk.pop()
-            else:
-                balanced = False
-        i += 1
+    for i in range(len(expr)):
+        next = expr[i]
+        if next == "(":
+            s.push(next)
+        elif next == ")":
+            if s.is_empty():
+                return False
+            s.pop()
 
-    return stk.size() == 0
+    return s.is_empty()
 
 
 if __name__ == "__main__":
-    s1 = "((()())())"
+    s1 = "((A + B) * (C - D) / X) * A"
     s2 = "((()(()())"
 
-    print(f"{s1} - balanced? {is_balanced(s1)}")
-    print(f"{s2} - balanced? {is_balanced(s2)}")
+    print(f"{s1}\n\t - balanced? {is_balanced(s1)}")
+    print(f"{s2}\n\t - balanced? {is_balanced(s2)}")
