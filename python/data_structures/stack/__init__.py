@@ -1,4 +1,4 @@
 from .stack import Stack
 
 
-__all__ = ["Stack"]
+__all__ = ['Stack']

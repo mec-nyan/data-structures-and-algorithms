@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Check if a series of parenthesis is balanced."""
 
-from data_structures.stack.stack import Stack
+from data_structures import Stack
 
 
 def is_balanced(s: str) -> bool:
