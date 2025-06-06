@@ -20,7 +20,7 @@ func main() {
 
 func toBin(dec int) (string, error) {
 	if dec < 0 {
-		return "", errors.New("Only positives for now!")
+		return "", errors.New("only positives for now")
 	}
 
 	if dec == 0 {
